@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html><head>
+    <title>Mi Dado Virtual</title>
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="manifest" href="manifest.json">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="assets/icon-192.png">
+    <script>if('serviceWorker' in navigator) navigator.serviceWorker.register('./sw.js');</script></head>
+<body>
+    <div class="container">
+        <h1>Lanza el Dado</h1>
+        <div id="dice">?</div>
+        <button onclick="rollDice()">¡Lanzar!</button>
+    </div>
+    <script src="script.js"></script>
+
+</body></html>
