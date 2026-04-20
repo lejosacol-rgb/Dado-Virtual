@@ -10,10 +10,9 @@
     <link rel="icon" type="image/png" href="assets/icon-192.png">
     
     <script>
-        // Registro del Service Worker para funcionamiento offline
         if('serviceWorker' in navigator) {
-            navigator.serviceWorker.register('./sw.js')
-                .then(() => console.log("SW activo"))
+            navigator.serviceWorker.register('./sw.js?v=2') // Forzamos actualización del SW
+                .then(() => console.log("SW actualizado"))
                 .catch(err => console.log("Error SW", err));
         }
     </script>
@@ -23,23 +22,17 @@
     <div class="container">
         <div class="scene">
             <div class="cube" id="cube">
-                <div class="face front one">
-                    <span class="dot"></span>
-                </div>
+                <div class="face front one"><span class="dot"></span></div>
                 <div class="face back six">
                     <div class="column"><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>
                     <div class="column"><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>
                 </div>
-                <div class="face right three">
-                    <span class="dot"></span><span class="dot"></span><span class="dot"></span>
-                </div>
+                <div class="face right three"><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>
                 <div class="face left four">
                     <div class="column"><span class="dot"></span><span class="dot"></span></div>
                     <div class="column"><span class="dot"></span><span class="dot"></span></div>
                 </div>
-                <div class="face top two">
-                    <span class="dot"></span><span class="dot"></span>
-                </div>
+                <div class="face top two"><span class="dot"></span><span class="dot"></span></div>
                 <div class="face bottom five">
                     <div class="column"><span class="dot"></span><span class="dot"></span></div>
                     <div class="column"><span class="dot"></span></div>
@@ -47,7 +40,6 @@
                 </div>
             </div>
         </div>
-        
         <button id="roll-btn">LANZAR DADO</button>
     </div>
 
