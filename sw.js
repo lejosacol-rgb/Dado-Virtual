@@ -1,4 +1,4 @@
-const CACHE_NAME = 'dado-v5';
+const CACHE_NAME = 'dado-v6';
 const assets = [
   './',
   './index.html',
