@@ -10,10 +10,11 @@
     <link rel="icon" type="image/png" href="assets/icon-192.png">
     
     <script>
+        // Registro del Service Worker para funcionamiento offline
         if('serviceWorker' in navigator) {
             navigator.serviceWorker.register('./sw.js')
-                .then(() => console.log("SW registrado correctamente"))
-                .catch(err => console.log("Fallo al registrar SW", err));
+                .then(() => console.log("SW activo"))
+                .catch(err => console.log("Error SW", err));
         }
     </script>
 </head>
@@ -49,6 +50,8 @@
         
         <button id="roll-btn">LANZAR DADO</button>
     </div>
+
+    <audio id="dice-sound" src="dados.mp3" preload="auto"></audio>
 
     <script src="script.js"></script>
 </body>
