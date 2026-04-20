@@ -4,47 +4,69 @@
     <meta charset="UTF-8">
     <title>Mi Dado Virtual</title>
     <link rel="stylesheet" href="style.css">
-    
     <link rel="manifest" href="manifest.json">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <link rel="icon" type="image/png" href="assets/icon-192.png">
-    
     <script>
-        if('serviceWorker' in navigator) {
-            navigator.serviceWorker.register('./sw.js?v=2') // Forzamos actualización del SW
-                .then(() => console.log("SW actualizado"))
-                .catch(err => console.log("Error SW", err));
-        }
+        if('serviceWorker' in navigator) navigator.serviceWorker.register('./sw.js?v=4');
     </script>
 </head>
 <body>
 
     <div class="container">
-        <div class="scene">
-            <div class="cube" id="cube">
-                <div class="face front one"><span class="dot"></span></div>
-                <div class="face back six">
-                    <div class="column"><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>
-                    <div class="column"><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>
+        <div class="mode-selector">
+            <button class="mode-btn active" id="btn-1" onclick="setDiceMode(1)">1 Dado</button>
+            <button class="mode-btn" id="btn-2" onclick="setDiceMode(2)">2 Dados</button>
+        </div>
+
+        <div class="dice-wrapper">
+            <div class="scene">
+                <div class="cube" id="cube1">
+                    <div class="face front one"><span class="dot"></span></div>
+                    <div class="face back six">
+                        <div class="column"><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>
+                        <div class="column"><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>
+                    </div>
+                    <div class="face right three"><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>
+                    <div class="face left four">
+                        <div class="column"><span class="dot"></span><span class="dot"></span></div>
+                        <div class="column"><span class="dot"></span><span class="dot"></span></div>
+                    </div>
+                    <div class="face top two"><span class="dot"></span><span class="dot"></span></div>
+                    <div class="face bottom five">
+                        <div class="column"><span class="dot"></span><span class="dot"></span></div>
+                        <div class="column"><span class="dot"></span></div>
+                        <div class="column"><span class="dot"></span><span class="dot"></span></div>
+                    </div>
                 </div>
-                <div class="face right three"><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>
-                <div class="face left four">
-                    <div class="column"><span class="dot"></span><span class="dot"></span></div>
-                    <div class="column"><span class="dot"></span><span class="dot"></span></div>
-                </div>
-                <div class="face top two"><span class="dot"></span><span class="dot"></span></div>
-                <div class="face bottom five">
-                    <div class="column"><span class="dot"></span><span class="dot"></span></div>
-                    <div class="column"><span class="dot"></span></div>
-                    <div class="column"><span class="dot"></span><span class="dot"></span></div>
+            </div>
+
+            <div class="scene hidden" id="scene2">
+                <div class="cube" id="cube2">
+                    <div class="face front one"><span class="dot"></span></div>
+                    <div class="face back six">
+                        <div class="column"><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>
+                        <div class="column"><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>
+                    </div>
+                    <div class="face right three"><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>
+                    <div class="face left four">
+                        <div class="column"><span class="dot"></span><span class="dot"></span></div>
+                        <div class="column"><span class="dot"></span><span class="dot"></span></div>
+                    </div>
+                    <div class="face top two"><span class="dot"></span><span class="dot"></span></div>
+                    <div class="face bottom five">
+                        <div class="column"><span class="dot"></span><span class="dot"></span></div>
+                        <div class="column"><span class="dot"></span></div>
+                        <div class="column"><span class="dot"></span><span class="dot"></span></div>
+                    </div>
                 </div>
             </div>
         </div>
-        <button id="roll-btn">LANZAR DADO</button>
+        
+        <button id="roll-btn">LANZAR</button>
     </div>
 
     <audio id="dice-sound" src="dados.mp3" preload="auto"></audio>
-
     <script src="script.js"></script>
 </body>
-</html>
+    </html>
