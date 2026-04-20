@@ -1,6 +1,5 @@
 <!DOCTYPE html>
-<html lang="es">
-<head>
+<html lang="es"><head>
     <meta charset="UTF-8">
     <title>Mi Dado Virtual</title>
     <link rel="stylesheet" href="style.css">
@@ -10,7 +9,10 @@
     <script>
         if('serviceWorker' in navigator) navigator.serviceWorker.register('./sw.js?v=4');
     </script>
-</head>
+
+    <link rel="manifest" href="manifest.json">
+    <link rel="icon" type="image/png" href="assets/icon-192.png">
+    <script>if('serviceWorker' in navigator) navigator.serviceWorker.register('sw.js');</script></head>
 <body>
 
     <div class="container">
@@ -68,5 +70,5 @@
 
     <audio id="dice-sound" src="dados.mp3" preload="auto"></audio>
     <script src="script.js"></script>
-</body>
-    </html>
+
+    </body></html>
